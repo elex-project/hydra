@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
-description = ""
+version = "1.1.0"
+description = "Simple HTML Tag Builder"
 
 repositories {
 	maven {
@@ -32,7 +32,7 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
@@ -69,19 +69,13 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				// todo
 				name.set(project.name)
 				description.set(project.description)
-				url.set("https://")
-				properties.set(mapOf(
-						"myProp" to "value",
-						"prop.with.dots" to "anotherValue"
-				))
+				url.set("https://github.com/elex-project/hydra")
 				licenses {
 					license {
-						// todo
 						name.set("BSD 3-Clause License")
-						url.set("licenseUrl")
+						url.set("https://github.com/elex-project/hydra/blob/main/LICENSE")
 					}
 				}
 				developers {
@@ -92,10 +86,9 @@ publishing {
 					}
 				}
 				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
+					connection.set("scm:git:https://github.com/elex-project/hydra.git")
+					developerConnection.set("scm:git:https://github.com/elex-project/hydra.git")
+					url.set("https://github.com/elex-project/hydra")
 				}
 			}
 		}
@@ -113,9 +106,9 @@ publishing {
 				password = project.findProperty("repo.password") as String
 			}
 		}
-		maven { //todo
+		maven {
 			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-library")
+			url = uri("https://github.com/elex-project/hydra")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String
@@ -125,7 +118,6 @@ publishing {
 }
 
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:20.1.0")
 
@@ -137,4 +129,3 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }
-
