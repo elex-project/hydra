@@ -108,7 +108,7 @@ publishing {
 		}
 		maven {
 			name = "mavenGithub"
-			url = uri("https://github.com/elex-project/hydra")
+			url = uri("https://maven.pkg.github.com/elex-project/hydra")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String

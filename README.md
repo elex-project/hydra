@@ -4,7 +4,7 @@ Simple HTML Fragment Builder
 ```kotlin
 repositories {
     maven {
-		url = uri("https://github.com/elex-project/hydra")
+		url = uri("https://maven.pkg.github.com/elex-project/hydra")
 	}
 }
 dependencies {
