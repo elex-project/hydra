@@ -1,7 +1,9 @@
-# tmpl-java-library
+# Project Hydra
 
-Template for Java library project
+HTML Fragment builder
 
 ---
+
 developed by Elex
+
 https://www.elex-project.com
