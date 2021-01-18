@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.1.0"
-description = "Simple HTML Tag Builder"
+version = "1.1.1"
+description = "Hydra is a Simple HTML Tag Builder"
 
 repositories {
 	maven {
@@ -69,7 +69,7 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				name.set(project.name)
+				name.set("Hydra")
 				description.set(project.description)
 				url.set("https://github.com/elex-project/hydra")
 				licenses {
